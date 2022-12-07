@@ -1,0 +1,209 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: rgb(80, 80, 80);
+    text-align: center;
+}
+
+/* -------------
+Typography
+---------------*/
+
+h1 {
+    font-size: 2.3rem;
+    color: rgb(190, 190, 190);
+    margin: 0;
+}
+
+/* targets p immediately AFTER h1 */
+h1+p {
+    color: rgb(233, 144, 0);
+    font-size: 1.25rem;
+    font-weight: 900;
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+h2+p {
+    color: rgb(233, 144, 0);
+    font-size: 1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+.top-text {
+    color: rgb(233, 144, 0);
+    font-size: .5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    order: -1;
+    border-top: 5px solid rgb(233, 144, 0);
+    margin: 0 auto;
+    padding-top: .75em;
+    letter-spacing: 1px;
+    border-image: linear-gradient(to left, rgb(219, 117, 0), rgb(255, 202, 141)) 1;
+}
+
+.fine-print {
+    font-size: 0.5rem;
+    letter-spacing: 1px;
+}
+
+/* targets all the siblings p AFTER h1 in parent div  
+h1 ~ p{
+    color: rgb(233, 144, 0);
+    font-size: 1.25rem;
+    font-weight: 900;
+}
+
+*/
+
+strong {
+    font-weight: 950;
+}
+
+
+/* -------------
+Intro
+---------------*/
+
+.intro {
+    background-color: rgb(72, 72, 72);
+    /* give back col in case image does not load due to slow internet or any other reason */
+    background-image: url(images/light.jpg);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    padding: 0em .3em 2em;
+
+}
+
+.main-content {
+    padding: 2em 1em;
+}
+
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.container-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 50vh;
+}
+
+
+/* .intro *, .main-content *{
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+
+} */
+
+/* -------------
+Form
+---------------*/
+
+/* form width */
+.info-collector-form {
+    width: 80%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* form field width to 100% of form width */
+input,
+button {
+    width: 100%;
+    margin-bottom: .5em;
+}
+
+input {
+    padding: .35em;
+    text-align: inherit;
+    font-family: inherit;
+    border: 1px solid black;
+    border-radius: 4px;
+    transition: transform .5s;
+}
+
+input:focus {
+    transform: scale(1.1);
+}
+
+button {
+    font-size: .625rem;
+    padding: 1em;
+    text-align: inherit;
+    font-family: inherit;
+    border: 1px solid black;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: 0;
+    cursor: pointer;
+    /* background-color: aqua; */
+    background-image: linear-gradient(to left, rgb(219, 117, 0), rgb(255, 191, 73));
+    color: white;
+    transition: transform .5s;
+}
+
+button:hover,
+button:focus {
+    background-image: linear-gradient(to left, rgb(54, 54, 54), rgb(158, 158, 158));
+    transform: scale(1.1);
+    /* background-color: blueviolet; */
+}
+
+
+
+/* -------------
+Media queries
+---------------*/
+
+@media (min-width:500px) {
+    body {
+        font-size: 1.25rem;
+        display: flex;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2,
+    h1+p {
+        font-size: 2rem;
+    }
+
+    .intro,
+    .main-content {
+        width: 50%;
+        min-height: 100vh;
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .container-intro {
+        height: 100%;
+    }
+
+}
